@@ -413,8 +413,7 @@ body {
 }
 
 .link:focus {
-  outline: 2px solid var(--primary-blue);
-  outline-offset: 2px;
+  outline: none;
   border-radius: var(--radius-sm);
 }
 

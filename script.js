@@ -314,16 +314,8 @@ const EventListeners = {
         
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            const formData = {
-                email: document.getElementById('email').value,
-                keepSignedIn: document.getElementById('keep-signed-in').checked
-            };
-            
-            if (FormHandler.validateLoginForm(formData)) {
-                // Simulate login process
-                this.handleLoginSuccess();
-            }
+            // Nothing happens when Next button is clicked
+            console.log('Next button clicked - no action taken');
         });
         
         // Real-time validation
@@ -455,7 +447,8 @@ const EventListeners = {
         if (createAccountLink) {
             createAccountLink.addEventListener('click', (e) => {
                 e.preventDefault();
-                AccessibilityUtils.announceToScreenReader('Create account functionality not implemented');
+                // Nothing happens when Create Account is clicked
+                console.log('Create Account clicked - no action taken');
             });
         }
     },

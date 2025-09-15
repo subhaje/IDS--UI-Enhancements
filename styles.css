@@ -250,7 +250,7 @@ body {
 }
 
 .link:focus {
-  outline-color: var(--brand-focus-color);
+  outline: none;
 }
 
 /* Focus Management */
