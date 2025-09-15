@@ -319,6 +319,11 @@ function updateColors(primaryColor, secondaryColor) {
     root.style.setProperty('--brand-link-color', primaryColor);
     root.style.setProperty('--brand-link-hover', darkenColor(primaryColor, 20));
     root.style.setProperty('--brand-focus-color', primaryColor);
+    
+    // Update button and link colors
+    root.style.setProperty('--btn-bg', primaryColor);
+    root.style.setProperty('--link-color', primaryColor);
+    root.style.setProperty('--btn-border-color', primaryColor);
 }
 
 /**
