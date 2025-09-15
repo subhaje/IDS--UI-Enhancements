@@ -11,6 +11,8 @@ const BRAND_CONFIGS = {
         tagline: '',
         primaryColor: '#1e40af',
         secondaryColor: '#6b7280',
+        buttonColor: '#075697',
+        linkColor: '#075697',
         labels: {
             loginLabel: 'Log In',
             loginPagePara: 'Please log in to your Greenheck account.',
@@ -85,6 +87,14 @@ const BRAND_CONFIGS = {
 
 // Current brand configuration
 let currentBrand = 'greenheck';
+
+/**
+ * Get the current brand name
+ * @returns {string} Current brand name
+ */
+function getCurrentBrand() {
+    return currentBrand;
+}
 
 /**
  * Get the current brand configuration
@@ -193,6 +203,14 @@ function applyBrandConfiguration() {
     
     // Update CSS custom properties for colors
     updateColors(config.primaryColor, config.secondaryColor);
+    
+    // Apply specific colors for Greenheck brand
+    if (brandName === 'greenheck') {
+        const root = document.documentElement;
+        root.style.setProperty('--btn-bg', config.buttonColor);
+        root.style.setProperty('--link-color', config.linkColor);
+        root.style.setProperty('--btn-border-color', config.buttonColor);
+    }
     
     // Update structured data
     updateStructuredData(config);
@@ -320,10 +338,13 @@ function updateColors(primaryColor, secondaryColor) {
     root.style.setProperty('--brand-link-hover', darkenColor(primaryColor, 20));
     root.style.setProperty('--brand-focus-color', primaryColor);
     
-    // Update button and link colors
-    root.style.setProperty('--btn-bg', primaryColor);
-    root.style.setProperty('--link-color', primaryColor);
-    root.style.setProperty('--btn-border-color', primaryColor);
+    // Update button and link colors (only for non-Greenheck brands)
+    const currentBrand = getCurrentBrand();
+    if (currentBrand !== 'greenheck') {
+        root.style.setProperty('--btn-bg', primaryColor);
+        root.style.setProperty('--link-color', primaryColor);
+        root.style.setProperty('--btn-border-color', primaryColor);
+    }
 }
 
 /**
@@ -389,6 +410,7 @@ function initializeConfig() {
 // Export functions for external use
 window.BrandConfig = {
     setBrand,
+    getCurrentBrand,
     getCurrentBrandConfig,
     getAvailableBrands: () => Object.keys(BRAND_CONFIGS),
     setCustomBrand,
