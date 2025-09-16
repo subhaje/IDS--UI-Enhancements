@@ -420,7 +420,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  position: relative;
   padding: 20px 0px 0px 26px;
   letter-spacing: -0.4px;
 }
@@ -435,12 +435,16 @@ body {
 .modal-close {
   background: none;
   border: none;
-  font-size: 1.25rem;
-  color: #6b7280;
+  font-size: 2.25rem;
+  color: rgba(95, 99, 104, 1);
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.25rem;
   border-radius: 0.25rem;
   transition: color 150ms ease-in-out, background-color 150ms ease-in-out;
+  position: absolute;
+  top: -29px;
+  right: -18px;
+  z-index: 10;
 }
 
 .modal-close:hover {
@@ -479,6 +483,7 @@ body {
   margin-bottom: 0.5rem;
   width: 184px;
   border-bottom: 1px solid rgba(151, 151, 151, 1);
+  padding-bottom: 2px;
 }
 
 .support-info {
@@ -495,8 +500,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   display: inline-block;
-  filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(2000%)
-    hue-rotate(210deg) brightness(0.4) contrast(1.2);
 }
 
 .phone-number {
@@ -684,18 +687,6 @@ body {
 
 
 
-.modal-close {
-  color: var(--brand-secondary-color);
-}
-
-.modal-close:hover {
-  color: var(--brand-text-color);
-  background-color: var(--brand-header-bg);
-}
-
-.modal-close:focus {
-  outline-color: var(--brand-focus-color);
-}
 
 /* User Support Section - Brand Variables */
 
