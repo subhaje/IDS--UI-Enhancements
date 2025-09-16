@@ -472,7 +472,7 @@ body {
 .user-support {
   flex: 0 0 200px;
   padding: 1rem;
-
+  margin-top: 4px;
   height: fit-content;
 }
 
@@ -532,16 +532,21 @@ body {
 
 /* Thank You Modal */
 .thank-you-modal {
-  padding: 2rem;
-  text-align: center;
-  max-width: 400px;
+  padding: 60px;
+  text-align: left;
+  max-width: 830px;
 }
 
 .thank-you-message {
-  font-size: 13px;
-  color: #333333;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
   margin-bottom: 2rem;
   line-height: 1.6;
+}
+
+.thank-you-modal .btn {
+  margin-left: 0;
 }
 
 /* Mobile Responsive Design */
@@ -690,19 +695,10 @@ body {
 
 /* User Support Section - Brand Variables */
 
-.support-title {
-  color: var(--brand-text-color);
-}
 
 /* Contact Form */
-.char-count {
-  color: var(--brand-text-secondary);
-}
 
 /* Thank You Modal */
-.thank-you-message {
-  color: var(--brand-text-secondary);
-}
 
 /* Success Messages */
 .success-message {
