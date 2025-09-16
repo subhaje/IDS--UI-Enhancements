@@ -7,7 +7,7 @@
 const BRAND_CONFIGS = {
     greenheck: {
         name: 'Greenheck',
-        logoPath: 'Greenheck_Logo.png',
+        logoPath: 'images/Greenheck_Logo.png',
         tagline: '',
         primaryColor: '#1e40af',
         secondaryColor: '#6b7280',
@@ -51,6 +51,8 @@ const BRAND_CONFIGS = {
         tagline: '',
         primaryColor: '#4b5563',
         secondaryColor: '#6b7280',
+        buttonColor: '#333333',
+        linkColor: '#333333',
         labels: {
             loginLabel: 'Log In',
             loginPagePara: 'Please log in to your account.',
@@ -130,6 +132,9 @@ function setCustomBrand(primaryColor, secondaryColor, logoPath, brandName = 'Cus
     // Update colors
     updateColors(primaryColor, secondaryColor);
     
+    // Set Next button background color
+    root.style.setProperty('--next-btn-bg', primaryColor);
+    
     // Update logo
     const logo = document.getElementById('company-logo');
     if (logo && logoPath) {
@@ -204,13 +209,9 @@ function applyBrandConfiguration() {
     // Update CSS custom properties for colors
     updateColors(config.primaryColor, config.secondaryColor);
     
-    // Apply specific colors for Greenheck brand
-    if (brandName === 'greenheck') {
-        const root = document.documentElement;
-        root.style.setProperty('--btn-bg', config.buttonColor);
-        root.style.setProperty('--link-color', config.linkColor);
-        root.style.setProperty('--btn-border-color', config.buttonColor);
-    }
+    // Apply brand-specific Next button background color
+    const root = document.documentElement;
+    root.style.setProperty('--next-btn-bg', config.buttonColor || '#333333');
     
     // Update structured data
     updateStructuredData(config);
@@ -338,13 +339,7 @@ function updateColors(primaryColor, secondaryColor) {
     root.style.setProperty('--brand-link-hover', darkenColor(primaryColor, 20));
     root.style.setProperty('--brand-focus-color', primaryColor);
     
-    // Update button and link colors (only for non-Greenheck brands)
-    const currentBrand = getCurrentBrand();
-    if (currentBrand !== 'greenheck') {
-        root.style.setProperty('--btn-bg', primaryColor);
-        root.style.setProperty('--link-color', primaryColor);
-        root.style.setProperty('--btn-border-color', primaryColor);
-    }
+    // Button and link colors are now handled separately for Next button only
 }
 
 /**
