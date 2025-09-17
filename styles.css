@@ -10,5 +10,5 @@
 
 :root {
   /* Next Button Background Color - Can be overridden dynamically for different brands */
-  --next-btn-bg: #333333; /* Dark gray for neutral brand Next button */
+  --brand-color: #333333; /* Dark gray for neutral brand Next button */
 }
