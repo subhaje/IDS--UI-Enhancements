@@ -120,7 +120,7 @@ body {
   font-size: 40px;
   font-weight: 500;
   color: #000000;
-  margin-bottom: 21px;
+  margin-bottom: 22px;
   text-align: left;
 }
 
@@ -128,18 +128,27 @@ body {
   font-size: 13px;
   font-weight: 400;
   color: #333333;
-  margin-bottom: 2rem;
+  margin-bottom: 31px;
   text-align: left;
 }
 
 /* Form Styles */
 .login-form {
   margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
 }
 
 .form-group {
-  margin-bottom: 17px;
+  margin-bottom: 0;
   max-width: 470px;
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .form-label {
@@ -148,7 +157,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   color: #000000;
-  margin-bottom: 4px;
+  /* margin-bottom: 4px; */
 }
 
 .form-input,
@@ -165,6 +174,7 @@ body {
   background-color: #ffffff;
   color: #000000;
   transition: border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+  min-height: 42px;
 }
 
 .form-input:focus,
@@ -180,10 +190,10 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  padding-right: 2.5rem; /* space for arrow */
+  padding-right: 2.5rem;
+  /* space for arrow */
 
-  background: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'> <polyline points='6 9 12 15 18 9'/> </svg>")
-    no-repeat right 0.75rem center;
+  background: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'> <polyline points='6 9 12 15 18 9'/> </svg>") no-repeat right 0.75rem center;
 
   background-size: 1rem;
 }
@@ -195,7 +205,14 @@ body {
 
 /* Placeholder text styling */
 .form-textarea::placeholder {
-  color: rgba(51, 51, 51, 1);
+  color: #333333;
+  font-size: 16px;
+}
+
+.form-input::placeholder,
+.form-select::placeholder,
+.form-textarea::placeholder {
+  color: #333333;
   font-size: 16px;
 }
 
@@ -204,7 +221,9 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 29px;
+  margin-bottom: 9px;
+  padding-top: 0;
+  min-height: 25px;
 }
 
 .checkbox-input {
@@ -297,7 +316,7 @@ body {
   color: var(--blue-color);
   text-decoration: none;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 500;
   transition: color 150ms ease-in-out;
 }
 
@@ -309,14 +328,16 @@ body {
 .need-help-link {
   color: var(--brand-color);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
 }
+
 .need-help-link:hover {
   color: var(--brand-color);
   text-decoration: underline;
   cursor: pointer;
 }
+
 .link:focus {
   outline: none;
   border-radius: 0.25rem;
@@ -332,6 +353,10 @@ body {
 
 .error-message.show {
   display: block;
+  position: absolute;
+  top: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .form-input.error,
@@ -380,6 +405,7 @@ body {
     opacity: 0;
     transform: translateY(-20px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -388,20 +414,20 @@ body {
 
 /* Contact Modal */
 .contact-modal {
-  padding: 2rem;
+  padding: 30px 60px;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  padding: 20px 0px 0px 26px;
+  /* position: relative; */
+  padding: 0;
   letter-spacing: -0.4px;
 }
 
 .modal-title {
-  color: #000000;
+  color: #333;
   margin: 0;
   font-size: 40px;
   font-weight: 500;
@@ -414,12 +440,17 @@ body {
   color: rgba(95, 99, 104, 1);
   cursor: pointer;
   padding: 0.25rem;
-  border-radius: 0.25rem;
+  border-radius: 100%;
   transition: color 150ms ease-in-out, background-color 150ms ease-in-out;
   position: absolute;
-  top: -29px;
-  right: -18px;
+  top: 20px;
+  right: 20px;
   z-index: 10;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-close:hover {
@@ -436,7 +467,7 @@ body {
 .modal-body {
   display: flex;
   gap: 2rem;
-  padding: 0px 24px 24px 28px;
+  padding: 0;
 }
 
 .contact-form {
@@ -496,7 +527,11 @@ body {
 
 /* Contact Form */
 .contact-form {
-  margin-top: 1.5rem;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
 }
 
 .char-count {
@@ -525,9 +560,8 @@ body {
 
 /* Mobile Responsive Design */
 @media (min-width: 480px) and (max-width: 768px) {
-   .modal-header {
-    padding-top: 6px !important;
-    
+  .modal-header {
+    padding-top: 0;
   }
 
   .main-content {
@@ -562,7 +596,7 @@ body {
   }
 
   .contact-modal {
-    padding: 40px;
+    padding: 20px 32px;
     max-width: 408px;
     width: 100%;
   }
@@ -575,6 +609,7 @@ body {
   .thank-you-modal {
     padding: 1.5rem;
   }
+
   .modal-close {
     top: 10px;
     right: 10px;
@@ -610,108 +645,98 @@ body {
 
   .modal-title {
     padding-bottom: 6px;
-}
-
-.thank-you-message {
-  margin-bottom: 41px;
-}
-
-/* High Contrast Mode Support */
-@media (prefers-contrast: high) {
-  :root {
-    --border-gray: #000000;
-    --secondary-gray: #000000;
   }
 
-  .form-input,
-  .form-select,
-  .form-textarea {
-    border-width: 2px;
-  }
-}
-
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  .thank-you-message {
+    margin-bottom: 41px;
   }
 
-  .modal-content {
-    animation: none;
+  /* High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    :root {
+      --border-gray: #000000;
+      --secondary-gray: #000000;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      border-width: 2px;
+    }
   }
-}
 
-/* Print Styles */
-@media print {
-  .modal-overlay {
-    display: none !important;
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    .modal-content {
+      animation: none;
+    }
   }
 
-  .main-content {
-    min-height: auto;
+  /* Print Styles */
+  @media print {
+    .modal-overlay {
+      display: none !important;
+    }
+
+    .main-content {
+      min-height: auto;
+    }
   }
-}
 
-/* Brand-specific styles and overrides */
 
-/* Ensure entire page is left-aligned */
+  /* Focus Management */
+  *:focus {
+    outline-color: var(--brand-focus-color);
+  }
 
-/* Header Bar */
+  *:focus-visible {
+    outline-color: var(--brand-focus-color);
+  }
 
-/* Logo Section */
+  /* Success Messages */
+  .success-message {
+    color: var(--brand-success-color);
+  }
 
-/* Login Section */
+  /* Dynamic Logo Background (if needed) */
+  .logo-container::before {
+    content: "";
+    display: block;
+    width: var(--brand-logo-width);
+    height: var(--brand-logo-height);
+    background-image: var(--brand-logo-path);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    /* Hidden by default, shown via JavaScript if needed */
+  }
 
-/* Info Button */
+  /* Brand-specific utility classes */
+  .brand-neutral {
+    --brand-primary-color: #4b5563;
+    --brand-secondary-color: #6b7280;
+    --brand-accent-color: #4b5563;
+    --brand-accent-hover: #374151;
+  }
 
-/* Buttons */
-
-/* Focus Management */
-*:focus {
-  outline-color: var(--brand-focus-color);
-}
-
-*:focus-visible {
-  outline-color: var(--brand-focus-color);
-}
-
-/* Success Messages */
-.success-message {
-  color: var(--brand-success-color);
-}
-
-/* Dynamic Logo Background (if needed) */
-.logo-container::before {
-  content: "";
-  display: block;
-  width: var(--brand-logo-width);
-  height: var(--brand-logo-height);
-  background-image: var(--brand-logo-path);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-bottom: 0.5rem;
-  opacity: 0; /* Hidden by default, shown via JavaScript if needed */
-}
-
-/* Brand-specific utility classes */
-.brand-neutral {
-  --brand-primary-color: #4b5563;
-  --brand-secondary-color: #6b7280;
-  --brand-accent-color: #4b5563;
-  --brand-accent-hover: #374151;
-}
-
-.brand-custom {
-  /* Custom brand colors can be applied via this class */
-  /* Colors will be set dynamically via JavaScript */
-  /* This class serves as a placeholder for dynamic brand styling */
-  display: block;
+  .brand-custom {
+    /* Custom brand colors can be applied via this class */
+    /* Colors will be set dynamically via JavaScript */
+    /* This class serves as a placeholder for dynamic brand styling */
+    display: block;
+  }
 }
 
 /* Responsive adjustments for brand neutral */
@@ -730,6 +755,7 @@ body {
     gap: 1rem;
     padding: 0px;
   }
+
   .contact-form {
     margin-top: 19px;
   }
@@ -738,7 +764,7 @@ body {
     flex: none;
     order: -1;
     padding: 0;
-    margin-top: 18px;
+    margin-top: 14px;
   }
 
   .support-title {
