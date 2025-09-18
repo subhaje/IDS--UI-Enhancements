@@ -526,8 +526,8 @@ body {
 /* Mobile Responsive Design */
 @media (min-width: 480px) and (max-width: 768px) {
    .modal-header {
+    padding-top: 6px !important;
     
-    padding: 6px 0px 0px 0px !important;
   }
 
   .main-content {
