@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Top Bar */
 .top-bar {
   width: 100%;
   height: 11px;
@@ -13,12 +12,10 @@
 }
 
 :root {
-  /* Only keep essential variables that are used for dynamic theming */
   --brand-color: rgba(7, 86, 151, 1);
   --blue-color: rgba(7, 86, 151, 1);
 }
 
-/* Base HTML Elements */
 html {
   font-size: 16px;
   scroll-behavior: smooth;
@@ -35,7 +32,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Focus Management */
 *:focus {
   outline: 2px solid var(--brand-focus-color);
   outline-offset: 2px;
@@ -50,66 +46,20 @@ body {
   outline-offset: 2px;
 }
 
-/* Skip Link for Accessibility */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: #1e40af;
-  color: #ffffff;
-  padding: 8px;
-  text-decoration: none;
-  border-radius: 0.25rem;
-  z-index: 1000;
-  transition: top 150ms ease-in-out;
-}
-
-.skip-link:focus {
-  top: 6px;
-}
-
-/* Main Content */
 .main-content {
   padding: 48px;
   max-width: 1247px;
   margin: 0 auto;
 }
 
-/* Logo Section */
-.logo-section {
-  margin-bottom: 2rem;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
-  margin-left: 0;
-  padding-left: 0;
-}
-
 .logo {
   height: 70.16px !important;
   width: 287px !important;
-  /* max-width: 200px; */
   object-fit: contain;
   margin-left: 0;
   padding-left: 0;
 }
 
-.tagline {
-  font-size: 14px;
-  font-style: italic;
-  color: #1e40af;
-  font-weight: 400;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-/* Login Section */
 .login-section {
   padding-top: 66px;
   margin-left: 0;
@@ -120,7 +70,7 @@ body {
   font-size: 40px;
   font-weight: 500;
   color: #000000;
-  margin-bottom: 21px;
+  margin-bottom: 22px;
   text-align: left;
 }
 
@@ -128,33 +78,54 @@ body {
   font-size: 13px;
   font-weight: 400;
   color: #333333;
-  margin-bottom: 2rem;
+  margin-bottom: 31px;
   text-align: left;
 }
 
-/* Form Styles */
 .login-form {
   margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
 }
 
 .form-group {
-  margin-bottom: 17px;
+  margin-bottom: 0;
   max-width: 470px;
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .form-label {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 14px;
   font-weight: 500;
   color: #000000;
   margin-bottom: 4px;
 }
 
+.form-label .label-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  line-height: 1.25;
+}
+
+.form-label .required {
+  color: #000000;
+}
+
 .form-input,
 .form-select,
 .form-textarea {
   width: 100%;
+  max-width: 470px;
   padding: 10px 1rem;
   border: 1px solid rgba(151, 151, 151, 1);
   border-radius: 4px;
@@ -165,6 +136,7 @@ body {
   background-color: #ffffff;
   color: #000000;
   transition: border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+  min-height: 42px;
 }
 
 .form-input:focus,
@@ -180,7 +152,7 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  padding-right: 2.5rem; /* space for arrow */
+  padding-right: 2.5rem;
 
   background: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'> <polyline points='6 9 12 15 18 9'/> </svg>")
     no-repeat right 0.75rem center;
@@ -193,18 +165,25 @@ body {
   min-height: 120px;
 }
 
-/* Placeholder text styling */
 .form-textarea::placeholder {
-  color: rgba(51, 51, 51, 1);
+  color: #333333;
   font-size: 16px;
 }
 
-/* Checkbox Styles */
+.form-input::placeholder,
+.form-select::placeholder,
+.form-textarea::placeholder {
+  color: #333333;
+  font-size: 16px;
+}
+
 .checkbox-group {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 29px;
+  margin-bottom: 9px;
+  padding-top: 0;
+  min-height: 25px;
 }
 
 .checkbox-input {
@@ -285,7 +264,6 @@ body {
   cursor: pointer;
 }
 
-/* Login Links */
 .login-links {
   display: flex;
   flex-direction: column;
@@ -297,7 +275,7 @@ body {
   color: var(--blue-color);
   text-decoration: none;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 500;
   transition: color 150ms ease-in-out;
 }
 
@@ -309,20 +287,16 @@ body {
 .need-help-link {
   color: var(--brand-color);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
 }
+
 .need-help-link:hover {
   color: var(--brand-color);
   text-decoration: underline;
   cursor: pointer;
 }
-.link:focus {
-  outline: none;
-  border-radius: 0.25rem;
-}
 
-/* Error Messages */
 .error-message {
   color: #dc2626;
   font-size: 0.75rem;
@@ -332,6 +306,10 @@ body {
 
 .error-message.show {
   display: block;
+  position: absolute;
+  top: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .form-input.error,
@@ -340,7 +318,6 @@ body {
   border-color: #dc2626;
 }
 
-/* Modal Styles */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -380,28 +357,27 @@ body {
     opacity: 0;
     transform: translateY(-20px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
 }
 
-/* Contact Modal */
 .contact-modal {
-  padding: 2rem;
+  padding: 30px 60px;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  padding: 20px 0px 0px 26px;
+  padding: 0;
   letter-spacing: -0.4px;
 }
 
 .modal-title {
-  color: #000000;
+  color: #333;
   margin: 0;
   font-size: 40px;
   font-weight: 500;
@@ -414,12 +390,17 @@ body {
   color: rgba(95, 99, 104, 1);
   cursor: pointer;
   padding: 0.25rem;
-  border-radius: 0.25rem;
+  border-radius: 100%;
   transition: color 150ms ease-in-out, background-color 150ms ease-in-out;
   position: absolute;
-  top: -29px;
-  right: -18px;
+  top: 20px;
+  right: 20px;
   z-index: 10;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-close:hover {
@@ -432,23 +413,24 @@ body {
   outline-offset: 2px;
 }
 
-/* Modal Body - Two Column Layout */
 .modal-body {
   display: flex;
   gap: 2rem;
-  padding: 0px 24px 24px 28px;
+  padding: 0;
 }
 
 .contact-form {
   flex: 1;
+  width: 100%;
+  margin: auto;
 }
 
-/* User Support Section */
 .user-support {
   flex: 0 0 200px;
   padding: 1rem;
   margin-top: 4px;
   height: fit-content;
+  max-width: 470px;
 }
 
 .support-title {
@@ -456,7 +438,7 @@ body {
   font-weight: 500;
   color: #000000;
   margin-bottom: 0.5rem;
-  width: 184px;
+  width: 100%;
   border-bottom: 1px solid rgba(151, 151, 151, 1);
   padding-bottom: 2px;
 }
@@ -494,9 +476,12 @@ body {
   border-radius: 0.25rem;
 }
 
-/* Contact Form */
 .contact-form {
-  margin-top: 1.5rem;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
 }
 
 .char-count {
@@ -504,7 +489,6 @@ body {
   color: rgba(51, 51, 51, 1);
 }
 
-/* Thank You Modal */
 .thank-you-modal {
   padding: 60px;
   text-align: left;
@@ -519,68 +503,68 @@ body {
   line-height: 1.6;
 }
 
-.thank-you-modal .btn {
-  margin-left: 0;
+.items-start {
+  align-items: flex-start !important;
 }
 
-/* Mobile Responsive Design */
-@media (min-width: 480px) and (max-width: 768px) {
-  .modal-header {
-    padding-top: 6px !important;
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --border-gray: #000000;
+    --secondary-gray: #000000;
   }
 
-  .main-content {
-    min-height: 100vh;
-    padding: 0px;
+  .form-input,
+  .form-select,
+  .form-textarea {
+    border-width: 2px;
   }
+}
 
-  .modal-overlay {
-    padding: 0px;
-  }
-
-  .container {
-    max-width: 100%;
-  }
-
-  .login-section {
-    padding: 1.5rem;
-  }
-
-  .login-title {
-    font-size: 1.5rem;
-  }
-
-  .logo {
-    height: 50px;
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 
   .modal-content {
-    margin: 1rem;
-    max-height: calc(100vh - 2rem);
-    max-width: 408px;
-  }
-
-  .contact-modal {
-    padding: 40px;
-    max-width: 408px;
-    width: 100%;
-  }
-
-  .modal-title {
-    font-size: 40px;
-    font-weight: 500;
-  }
-
-  .thank-you-modal {
-    padding: 1.5rem;
-  }
-  .modal-close {
-    top: 10px;
-    right: 10px;
+    animation: none;
   }
 }
 
+/* Print Styles */
+@media print {
+  .modal-overlay {
+    display: none !important;
+  }
+
+  .main-content {
+    min-height: auto;
+  }
+}
+
+*:focus {
+  outline-color: var(--brand-focus-color);
+}
+
+*:focus-visible {
+  outline-color: var(--brand-focus-color);
+}
+
+.success-message {
+  color: var(--brand-success-color);
+}
+
 @media (max-width: 480px) {
+  .main-content {
+    padding: 32px;
+  }
+
   .login-section {
     padding: 66px 2px;
   }
@@ -614,114 +598,14 @@ body {
   .thank-you-message {
     margin-bottom: 41px;
   }
-
-  /* High Contrast Mode Support */
-  @media (prefers-contrast: high) {
-    :root {
-      --border-gray: #000000;
-      --secondary-gray: #000000;
-    }
-
-    .form-input,
-    .form-select,
-    .form-textarea {
-      border-width: 2px;
-    }
-  }
-
-  /* Reduced Motion Support */
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-
-    .modal-content {
-      animation: none;
-    }
-  }
-
-  /* Print Styles */
-  @media print {
-    .modal-overlay {
-      display: none !important;
-    }
-
-    .main-content {
-      min-height: auto;
-    }
-  }
-
-  /* Brand-specific styles and overrides */
-
-  /* Ensure entire page is left-aligned */
-
-  /* Header Bar */
-
-  /* Logo Section */
-
-  /* Login Section */
-
-  /* Info Button */
-
-  /* Buttons */
-
-  /* Focus Management */
-  *:focus {
-    outline-color: var(--brand-focus-color);
-  }
-
-  *:focus-visible {
-    outline-color: var(--brand-focus-color);
-  }
-
-  /* Success Messages */
-  .success-message {
-    color: var(--brand-success-color);
-  }
-
-  /* Dynamic Logo Background (if needed) */
-  .logo-container::before {
-    content: "";
-    display: block;
-    width: var(--brand-logo-width);
-    height: var(--brand-logo-height);
-    background-image: var(--brand-logo-path);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-bottom: 0.5rem;
-    opacity: 0; /* Hidden by default, shown via JavaScript if needed */
-  }
-
-  /* Brand-specific utility classes */
-  .brand-neutral {
-    --brand-primary-color: #4b5563;
-    --brand-secondary-color: #6b7280;
-    --brand-accent-color: #4b5563;
-    --brand-accent-hover: #374151;
-  }
-
-  .brand-custom {
-    /* Custom brand colors can be applied via this class */
-    /* Colors will be set dynamically via JavaScript */
-    /* This class serves as a placeholder for dynamic brand styling */
-    display: block;
-  }
 }
-/* Responsive adjustments for brand neutral */
-@media (max-width: 768px) {
-  .logo {
-    width: min(var(--brand-logo-width), 180px);
-    height: min(var(--brand-logo-height), 50px);
-  }
 
-  .tagline {
-    font-size: 0.75rem;
+@media (max-width: 768px) {
+  .modal-header {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 470px;
+    width: 100%;
   }
 
   .modal-body {
@@ -729,18 +613,22 @@ body {
     gap: 1rem;
     padding: 0px;
   }
-  .contact-form {
-    margin-top: 19px;
-  }
 
-  .user-support {
+  .modal-body .user-support {
     flex: none;
     order: -1;
     padding: 0;
-    margin-top: 18px;
+    margin-top: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 470px;
+    width: 100%;
   }
 
-  .support-title {
+  .modal-body .form-group {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 470px;
     width: 100%;
   }
 }
@@ -749,49 +637,5 @@ body {
   .logo {
     width: min(var(--brand-logo-width), 160px);
     height: min(var(--brand-logo-height), 45px);
-  }
-}
-
-/* High contrast mode for brand neutral */
-@media (prefers-contrast: high) {
-  :root {
-    --brand-border-color: #000000;
-    --brand-secondary-color: #000000;
-    --brand-text-secondary: #000000;
-  }
-
-  .form-input,
-  .form-select,
-  .form-textarea {
-    border-width: 2px;
-  }
-}
-
-/* Dark mode support for brand neutral */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --brand-background-color: #1f2937;
-    --brand-text-color: #f9fafb;
-    --brand-text-secondary: #d1d5db;
-    --brand-header-bg: #374151;
-    --brand-border-color: #4b5563;
-    --brand-primary-color: #f9fafb;
-    --brand-secondary-color: #d1d5db;
-    --brand-accent-color: #6b7280;
-    --brand-accent-hover: #9ca3af;
-    --brand-link-color: #60a5fa;
-    --brand-link-hover: #93c5fd;
-  }
-
-  .form-input,
-  .form-select,
-  .form-textarea {
-    background-color: rgba(255, 255, 255, 1);
-    border-color: rgba(151, 151, 151, 1);
-  }
-
-  .modal-content {
-    background-color: rgba(255, 255, 255, 1);
-    border-color: rgba(151, 151, 151, 1);
   }
 }
