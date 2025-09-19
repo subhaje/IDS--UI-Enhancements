@@ -525,9 +525,8 @@ body {
 
 /* Mobile Responsive Design */
 @media (min-width: 480px) and (max-width: 768px) {
-   .modal-header {
+  .modal-header {
     padding-top: 6px !important;
-    
   }
 
   .main-content {
@@ -610,110 +609,110 @@ body {
 
   .modal-title {
     padding-bottom: 6px;
-}
-
-.thank-you-message {
-  margin-bottom: 41px;
-}
-
-/* High Contrast Mode Support */
-@media (prefers-contrast: high) {
-  :root {
-    --border-gray: #000000;
-    --secondary-gray: #000000;
   }
 
-  .form-input,
-  .form-select,
-  .form-textarea {
-    border-width: 2px;
-  }
-}
-
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  .thank-you-message {
+    margin-bottom: 41px;
   }
 
-  .modal-content {
-    animation: none;
+  /* High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    :root {
+      --border-gray: #000000;
+      --secondary-gray: #000000;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      border-width: 2px;
+    }
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    .modal-content {
+      animation: none;
+    }
+  }
+
+  /* Print Styles */
+  @media print {
+    .modal-overlay {
+      display: none !important;
+    }
+
+    .main-content {
+      min-height: auto;
+    }
+  }
+
+  /* Brand-specific styles and overrides */
+
+  /* Ensure entire page is left-aligned */
+
+  /* Header Bar */
+
+  /* Logo Section */
+
+  /* Login Section */
+
+  /* Info Button */
+
+  /* Buttons */
+
+  /* Focus Management */
+  *:focus {
+    outline-color: var(--brand-focus-color);
+  }
+
+  *:focus-visible {
+    outline-color: var(--brand-focus-color);
+  }
+
+  /* Success Messages */
+  .success-message {
+    color: var(--brand-success-color);
+  }
+
+  /* Dynamic Logo Background (if needed) */
+  .logo-container::before {
+    content: "";
+    display: block;
+    width: var(--brand-logo-width);
+    height: var(--brand-logo-height);
+    background-image: var(--brand-logo-path);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 0.5rem;
+    opacity: 0; /* Hidden by default, shown via JavaScript if needed */
+  }
+
+  /* Brand-specific utility classes */
+  .brand-neutral {
+    --brand-primary-color: #4b5563;
+    --brand-secondary-color: #6b7280;
+    --brand-accent-color: #4b5563;
+    --brand-accent-hover: #374151;
+  }
+
+  .brand-custom {
+    /* Custom brand colors can be applied via this class */
+    /* Colors will be set dynamically via JavaScript */
+    /* This class serves as a placeholder for dynamic brand styling */
+    display: block;
   }
 }
-
-/* Print Styles */
-@media print {
-  .modal-overlay {
-    display: none !important;
-  }
-
-  .main-content {
-    min-height: auto;
-  }
-}
-
-/* Brand-specific styles and overrides */
-
-/* Ensure entire page is left-aligned */
-
-/* Header Bar */
-
-/* Logo Section */
-
-/* Login Section */
-
-/* Info Button */
-
-/* Buttons */
-
-/* Focus Management */
-*:focus {
-  outline-color: var(--brand-focus-color);
-}
-
-*:focus-visible {
-  outline-color: var(--brand-focus-color);
-}
-
-/* Success Messages */
-.success-message {
-  color: var(--brand-success-color);
-}
-
-/* Dynamic Logo Background (if needed) */
-.logo-container::before {
-  content: "";
-  display: block;
-  width: var(--brand-logo-width);
-  height: var(--brand-logo-height);
-  background-image: var(--brand-logo-path);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-bottom: 0.5rem;
-  opacity: 0; /* Hidden by default, shown via JavaScript if needed */
-}
-
-/* Brand-specific utility classes */
-.brand-neutral {
-  --brand-primary-color: #4b5563;
-  --brand-secondary-color: #6b7280;
-  --brand-accent-color: #4b5563;
-  --brand-accent-hover: #374151;
-}
-
-.brand-custom {
-  /* Custom brand colors can be applied via this class */
-  /* Colors will be set dynamically via JavaScript */
-  /* This class serves as a placeholder for dynamic brand styling */
-  display: block;
-}
-
 /* Responsive adjustments for brand neutral */
 @media (max-width: 768px) {
   .logo {
